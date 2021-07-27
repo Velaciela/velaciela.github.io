@@ -1,0 +1,16 @@
+name: test
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  check_comments:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test
+        uses: peter-evans/slash-command-dispatch@v2
+        with:
+          token: ${{ secrets.PAT }}
+          reaction-token: ${{ secrets.PAT }}
+          commands: |
+            test

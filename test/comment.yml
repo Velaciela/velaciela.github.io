@@ -1,0 +1,21 @@
+name: comment
+on:
+  repository_dispatch:
+    types: [test-command]
+
+jobs:
+  reply:
+    name: reply
+    runs-on: ubuntu-latest
+    steps:
+      - name: Creat comment
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          issue-number: 1
+          body: |
+            This is a multi-line test comment
+            - With GitHub **Markdown** :sparkles:
+            - Created by [create-or-update-comment][1]
+
+            [1]: https://github.com/peter-evans/create-or-update-comment
+          reactions: rocket
