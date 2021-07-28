@@ -11,6 +11,5 @@ jobs:
         with:
           token: ${{ secrets.ACTION }}
           commands: example
-          repository: ${{ github.event.client_payload.github.payload.repository.full_name }}
-          comment-id: ${{ github.event.client_payload.github.payload.comment.id }}
+          repository: Velaciela/ci_workflows
           reaction-type: eyes
