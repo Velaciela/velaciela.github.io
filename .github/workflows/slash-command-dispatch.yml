@@ -10,6 +10,8 @@ jobs:
         uses: peter-evans/slash-command-dispatch@v2
         with:
           token: ${{ secrets.ACTION }}
-          commands: example
           repository: Velaciela/ci_workflows
           reaction-type: eyes
+          commands: | 
+            example
+            test
